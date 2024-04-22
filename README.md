@@ -29,13 +29,13 @@ And it should re-connect.
 9. Set VRChat avatar params properly (or use TouchOSC to map them)
  #   Params are:
    
-       /Focus (0-1)
+       /Focus (0-1) (Float)
    
-       /FocusLeft (0-1)
+       /FocusLeft (0-1) (Float
    
-       /FocusRight (0-1)
+       /FocusRight (0-1) (Float)
    
-       /Blink (0,1)
+       /Blink (0,1) (Int)
 
 Will write better docs when I get a minute. Thanks!
 
