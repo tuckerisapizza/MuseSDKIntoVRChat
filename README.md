@@ -3,7 +3,7 @@
 This project is based off BrainFlowsIntoVRChat, using some of the same math from it, with my own code alongside it. THANK YOU SO MUCH TO CHARLES (Creator of BrainFlowsIntoVRChat) for help with the math!
 
 Some quick disclaimers before we get started:
-I am not associated with Interaxon or the Muse corperation (whatever they go by these days).
+I am not associated with Interaxon or the Muse corporation (whatever they go by these days).
 Most of the software used alongside this project is abandonware, and it isn't guarenteed to work.
 
 # What you'll need:
