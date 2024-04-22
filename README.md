@@ -4,8 +4,11 @@ I am not associated with Interaxon or the Muse corperation (whatever they go by 
 Most of the software used alongside this project is abandonware, and it isn't guarenteed to work.
 
 What you'll need:
+
 Muse MU-01 (2 charging ports)
+
 MuseIO 3.4.1 (can be found at https://github.com/DrBrainlove/muse_tools)
+
 Bluetooth Adapter
 
 1. Install the Windows Muse SDK
