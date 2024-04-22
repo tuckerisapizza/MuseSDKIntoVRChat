@@ -13,8 +13,8 @@ Bluetooth Adapter
 3. Put your muse in Pairing Mode (flashing light, hold down for 5 secs)
 4. Connect it using bluetooth. (It will disconnect, just keep it paired)
 5. Run this command:
-   ```muse-io --device-name <DEVICE NAME> --osc osc.udp://localhost:1647 
-```
+   ```muse-io --device-name <DEVICE NAME> --osc osc.udp://localhost:1647```
+
 And it should re-connect.
 5. Open main.py
 6. Set VRChat avatar params properly (or use TouchOSC to map them)
