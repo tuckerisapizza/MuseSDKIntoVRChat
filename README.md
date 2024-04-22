@@ -9,9 +9,15 @@ MuseIO 3.4.1 (can be found at https://github.com/DrBrainlove/muse_tools)
 Bluetooth Adapter
 
 1. Install the Windows Muse SDK
-2. Follow the steps to get MuseIO up and running on port 1647
-3. Open main.py
-4. Set VRChat avatar params properly (or use TouchOSC to map them)
+2. Open CMD and navigate to C:/Program Files (x86)/Muse/
+3. Put your muse in Pairing Mode (flashing light, hold down for 5 secs)
+4. Connect it using bluetooth. (It will disconnect, just keep it paired)
+5. Run this command:
+   ```muse-io --device-name <DEVICE NAME> --osc osc.udp://localhost:1647 
+```
+And it should re-connect.
+5. Open main.py
+6. Set VRChat avatar params properly (or use TouchOSC to map them)
    Params are:
        /Focus (0-1)
        /FocusLeft (0-1)
