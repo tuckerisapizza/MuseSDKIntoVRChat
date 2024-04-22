@@ -1,4 +1,4 @@
-<img align="left" width="100" height="100" src="https://picsum.photos/100/100">
+<img align="left" width="88" height="88" src="https://cdn.discordapp.com/attachments/772832118161932308/1232030038841622579/Square44x44Logo.scale-200.png?ex=66391c63&is=6626a763&hm=43f3e0d0c2ef2103199be31f8e64eb2b13e990d6bf9bc4753a48e47bac604aa2&">
 
 # Muse2014IntoVRChat
 
