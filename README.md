@@ -23,9 +23,13 @@ And it should re-connect.
 6. Open main.py
 7. Set VRChat avatar params properly (or use TouchOSC to map them)
    Params are:
+   
        /Focus (0-1)
+   
        /FocusLeft (0-1)
+   
        /FocusRight (0-1)
+   
        /Blink (0,1)
 
 Will write better docs when I get a minute. Thanks!
