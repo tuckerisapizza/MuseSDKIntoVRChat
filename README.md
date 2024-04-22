@@ -13,15 +13,17 @@ Bluetooth Adapter
 
 1. Install the Windows Muse SDK
 2. Open CMD and navigate to C:/Program Files (x86)/Muse/
-3. Put your muse in Pairing Mode (flashing light, hold down for 5 secs)
-4. Connect it using bluetooth. (It will disconnect, just keep it paired)
-5. Run this command:
+4. Put your muse in Pairing Mode (flashing light, hold down for 5 secs)
+5. Connect it using bluetooth. (It will disconnect, just keep it paired)
+6. Run this command:
    ```muse-io --device-name <DEVICE NAME> --osc osc.udp://localhost:1647```
 
 And it should re-connect.
 
-6. Open main.py
-7. Set VRChat avatar params properly (or use TouchOSC to map them)
+6. Download the zip of this repo and navigate into its folder on CMD
+7. ```pip install -r requirements.txt```
+8. Open main.py
+9. Set VRChat avatar params properly (or use TouchOSC to map them)
    Params are:
    
        /Focus (0-1)
