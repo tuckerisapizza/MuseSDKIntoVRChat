@@ -16,8 +16,9 @@ Bluetooth Adapter
    ```muse-io --device-name <DEVICE NAME> --osc osc.udp://localhost:1647```
 
 And it should re-connect.
-5. Open main.py
-6. Set VRChat avatar params properly (or use TouchOSC to map them)
+
+6. Open main.py
+7. Set VRChat avatar params properly (or use TouchOSC to map them)
    Params are:
        /Focus (0-1)
        /FocusLeft (0-1)
