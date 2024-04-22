@@ -25,6 +25,7 @@ global FOCUSLEFT
 global RELAX
 global printrelay
 printrelay = ""
+FOCUS = 0.0
 
 
   # HI THERE, THANKS FOR LOOKING AT MY AWFUL CODE, I WROTE THIS IN 3 HOURS AND IT FUNCTIONS WELL ENOUGH, WILL FIX LATER, \
@@ -55,10 +56,11 @@ def printvalues(wave):
       globals()["printrelay"] = globals()["printrelay"] + "T"
       print(wave)
   if "Blinking?" in wave:
+    
     if not "L" in globals()["printrelay"]:
       globals()["printrelay"] = globals()["printrelay"] + "L"
       print(wave)
-      sendmessages()
+      
       
   # focus calculated and printed using GLOBAL values
   
@@ -66,7 +68,8 @@ def printvalues(wave):
         globals()["printrelay"] = globals()["printrelay"] + "F"
         globals()["FOCUS"] = calculate_ratio((globals()["BETA"]), (globals()["THETA"])) 
         print(str(globals()["FOCUS"]) + " Focus")
-        sendmessages()
+    
+    
         
     if not "X" in globals()["printrelay"]:  #left and rightv focus
         globals()["printrelay"] = globals()["printrelay"] + "X"
@@ -75,6 +78,13 @@ def printvalues(wave):
         globals()["FOCUSRIGHT"] = calculate_ratio((globals()["BETARIGHT"]), (globals()["THETARIGHT"]))
         print(str(globals()["FOCUSRIGHT"]) + " Right Focus")
         sendmessages()
+    else:
+      sendmessages()
+
+    
+    
+    
+        
         
     
         
@@ -96,7 +106,7 @@ def printvalues(wave):
                   if "X" in globals()["printrelay"]:
                     
                     globals()["printrelay"] = ""
-                    time.sleep(.07) #SOME DELAY OR ELSE THE ENTIRE THING CLEARS BEFORE ITS EVEN READABLE
+                    time.sleep(.05) #SOME DELAY OR ELSE THE ENTIRE THING CLEARS BEFORE ITS EVEN READABLE
                     
                     os.system("cls")
                   
@@ -162,7 +172,7 @@ def normalize(num, min_val=-1, max_val=2): #normalize from (-1 to 2) to (0 to 1)
 def calculate_ratio(numerator, denominator): #calculates focus ratio!
         try: 
           #return tanh_normalize(numerator / denominator, .8, -5)
-          return tanh_normalize(numerator / denominator, 1.1, -1)
+          return tanh_normalize(numerator / denominator, 1, -1)
         except:
           return 0.0 
         
