@@ -1,3 +1,5 @@
+<img align="left" width="100" height="100" src="https://picsum.photos/100/100">
+
 # Muse2014IntoVRChat
 
 This project is based off BrainFlowsIntoVRChat, using some of the same math from it, with my own code alongside it. THANK YOU SO MUCH TO CHARLES (Creator of BrainFlowsIntoVRChat) for help with the math!
