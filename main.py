@@ -31,7 +31,7 @@ printrelay = ""
     # MATH NEEDS A LITTLE BIT MORE FINE TUNING BUT ITS ALL GOOD
   
 def printvalues(wave):
-  sendmessages() #SENDS THE MESSAGES OUT WITHOUT WAITING FOR THE PRINT BUFFER
+   #SENDS THE MESSAGES OUT WITHOUT WAITING FOR THE PRINT BUFFER
   
   #PRINTING IS A GOD AWFUL MESS, VALUES CHANGE PLACES THROUGHOUT TESTING AND I NEED A BETTER SYSTEM FOR THIS
   if "Alpha" in wave:
@@ -58,23 +58,25 @@ def printvalues(wave):
     if not "L" in globals()["printrelay"]:
       globals()["printrelay"] = globals()["printrelay"] + "L"
       print(wave)
+      sendmessages()
       
   # focus calculated and printed using GLOBAL values
   
     if not "F" in globals()["printrelay"]:
         globals()["printrelay"] = globals()["printrelay"] + "F"
-        globals()["FOCUS"] = calculate_ratio(normalize(globals()["BETA"]), normalize(globals()["THETA"])) 
+        globals()["FOCUS"] = calculate_ratio((globals()["BETA"]), (globals()["THETA"])) 
         print(str(globals()["FOCUS"]) + " Focus")
+        sendmessages()
         
-    if not "X" in globals()["printrelay"]:  #left focus
+    if not "X" in globals()["printrelay"]:  #left and rightv focus
         globals()["printrelay"] = globals()["printrelay"] + "X"
-        globals()["FOCUSLEFT"] = calculate_ratio(normalize(globals()["BETALEFT"]), normalize(globals()["THETALEFT"]))
-        print(str(globals()["FOCUSLEFT"]) + " Right Focus")
+        globals()["FOCUSLEFT"] = calculate_ratio((globals()["BETALEFT"]), (globals()["THETALEFT"]))
+        print(str(globals()["FOCUSLEFT"]) + " Left Focus")
+        globals()["FOCUSRIGHT"] = calculate_ratio((globals()["BETARIGHT"]), (globals()["THETARIGHT"]))
+        print(str(globals()["FOCUSRIGHT"]) + " Right Focus")
+        sendmessages()
         
-    if not "Y" in globals()["printrelay"]: #right focus
-        globals()["printrelay"] = globals()["printrelay"] + "Y"
-        globals()["FOCUSRIGHT"] = calculate_ratio(normalize(globals()["BETARIGHT"]), normalize(globals()["THETARIGHT"]))
-        print(str(globals()["FOCUS"]) + " Left Focus")
+    
         
   
     if not "R" in globals()["printrelay"]:
@@ -82,7 +84,7 @@ def printvalues(wave):
         globals()["RELAX"] = calculate_ratio(globals()["ALPHA"], globals()["THETA"])
         print(str(globals()["RELAX"]) + " Relax")
   
-
+  
   if "A" in globals()["printrelay"]:
     if "B" in globals()["printrelay"]:
       if "D" in globals()["printrelay"]:
@@ -92,11 +94,11 @@ def printvalues(wave):
               if "F" in globals()["printrelay"]:
                 if "R" in globals()["printrelay"]:
                   if "X" in globals()["printrelay"]:
-                    if "Y" in globals()["printrelay"]:
-                      globals()["printrelay"] = ""
-                      time.sleep(.1) #SOME DELAY OR ELSE THE ENTIRE THING CLEARS BEFORE ITS EVEN READABLE
-                      
-                      os.system("cls")
+                    
+                    globals()["printrelay"] = ""
+                    time.sleep(.07) #SOME DELAY OR ELSE THE ENTIRE THING CLEARS BEFORE ITS EVEN READABLE
+                    
+                    os.system("cls")
                   
             
   
@@ -145,15 +147,17 @@ def getaverage(a, b, c, d): #we have 4 channels, gets the average of those.
   c = float(c)
   d = float(d)
   average = (a+b+c+d)/4
-  return average
+  normal_avg = normalize(average)
+  return normal_avg
 
 def tanh_normalize(data, scale, offset): #i think this is what charles meant when he told me he used a sigmoid function?
   return np.tanh(scale * (data + offset)) #ngl, i stole this from BFiVRC
 
-def normalize(value): #normalize from (-1 to 2) to (0 to 1)
+def normalize(num, min_val=-1, max_val=2): #normalize from (-1 to 2) to (0 to 1)
     # Normalize the value
-    normalized_value = (value + 1) / 3
+    normalized_value = (num + 1) / 2
     return normalized_value
+    
   
 def calculate_ratio(numerator, denominator): #calculates focus ratio!
         try: 
