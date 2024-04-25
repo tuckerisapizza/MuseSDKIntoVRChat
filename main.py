@@ -106,7 +106,7 @@ def printvalues(wave):
                   if "X" in globals()["printrelay"]:
                     
                     globals()["printrelay"] = ""
-                    time.sleep(.05) #SOME DELAY OR ELSE THE ENTIRE THING CLEARS BEFORE ITS EVEN READABLE
+                    time.sleep(.09) #SOME DELAY OR ELSE THE ENTIRE THING CLEARS BEFORE ITS EVEN READABLE
                     
                     os.system("cls")
                   
