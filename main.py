@@ -26,6 +26,9 @@ global RELAX
 global printrelay
 printrelay = ""
 FOCUS = 0.0
+FOCUSRIGHT = 0.0
+FOCUSLEFT = 0.0
+RELAX = 0.0
 
 
   # HI THERE, THANKS FOR LOOKING AT MY AWFUL CODE, I WROTE THIS IN 3 HOURS AND IT FUNCTIONS WELL ENOUGH, WILL FIX LATER, \
@@ -33,7 +36,7 @@ FOCUS = 0.0
   
 def printvalues(wave):
    #SENDS THE MESSAGES OUT WITHOUT WAITING FOR THE PRINT BUFFER
-  
+  sendmessages()
   #PRINTING IS A GOD AWFUL MESS, VALUES CHANGE PLACES THROUGHOUT TESTING AND I NEED A BETTER SYSTEM FOR THIS
   if "Alpha" in wave:
     if not "A" in globals()["printrelay"]:
@@ -59,6 +62,7 @@ def printvalues(wave):
     
     if not "L" in globals()["printrelay"]:
       globals()["printrelay"] = globals()["printrelay"] + "L"
+      sendblink()
       print(wave)
       
       
@@ -66,20 +70,18 @@ def printvalues(wave):
   
     if not "F" in globals()["printrelay"]:
         globals()["printrelay"] = globals()["printrelay"] + "F"
-        globals()["FOCUS"] = calculate_ratio((globals()["BETA"]), (globals()["THETA"])) 
+        globals()["FOCUS"] = abs(calculate_ratio(globals()["BETA"], globals()["THETA"]))
         print(str(globals()["FOCUS"]) + " Focus")
     
     
         
     if not "X" in globals()["printrelay"]:  #left and rightv focus
         globals()["printrelay"] = globals()["printrelay"] + "X"
-        globals()["FOCUSLEFT"] = calculate_ratio((globals()["BETALEFT"]), (globals()["THETALEFT"]))
+        globals()["FOCUSLEFT"] = abs(calculate_ratio(globals()["BETALEFT"], globals()["THETALEFT"]))
         print(str(globals()["FOCUSLEFT"]) + " Left Focus")
-        globals()["FOCUSRIGHT"] = calculate_ratio((globals()["BETARIGHT"]), (globals()["THETARIGHT"]))
+        globals()["FOCUSRIGHT"] = abs(calculate_ratio(globals()["BETARIGHT"], globals()["THETARIGHT"]))
         print(str(globals()["FOCUSRIGHT"]) + " Right Focus")
-        sendmessages()
-    else:
-      sendmessages()
+    
 
     
     
@@ -106,7 +108,7 @@ def printvalues(wave):
                   if "X" in globals()["printrelay"]:
                     
                     globals()["printrelay"] = ""
-                    time.sleep(.09) #SOME DELAY OR ELSE THE ENTIRE THING CLEARS BEFORE ITS EVEN READABLE
+                    time.sleep(.03) #SOME DELAY OR ELSE THE ENTIRE THING CLEARS BEFORE ITS EVEN READABLE
                     
                     os.system("cls")
                   
@@ -181,6 +183,10 @@ def sendmessages():
   client.send_message("/avatar/parameters/FocusRight", globals()["FOCUSRIGHT"])
   client.send_message("/avatar/parameters/FocusLeft", globals()["FOCUSLEFT"])
   client.send_message("/avatar/parameters/Focus", globals()["FOCUS"])
+  
+
+def sendblink():
+  client = udp_client.SimpleUDPClient("127.0.0.1", 9000) # SENDS DATA TO VRCHAT OVER PARAMS blink
   client.send_message("/avatar/parameters/Blink", globals()["BLINK"])
 
 if __name__ == "__main__":
