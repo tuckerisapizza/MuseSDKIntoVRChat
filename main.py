@@ -24,11 +24,16 @@ global FOCUSRIGHT
 global FOCUSLEFT
 global RELAX
 global printrelay
+global timesent
+global timesent2
 printrelay = ""
 FOCUS = 0.0
 FOCUSRIGHT = 0.0
 FOCUSLEFT = 0.0
 RELAX = 0.0
+timesent = round(time.time(), 1)
+timesent2 = round(time.time(), 1)
+
 
 
   # HI THERE, THANKS FOR LOOKING AT MY AWFUL CODE, I WROTE THIS IN 3 HOURS AND IT FUNCTIONS WELL ENOUGH, WILL FIX LATER, \
@@ -37,6 +42,7 @@ RELAX = 0.0
 def printvalues(wave):
    #SENDS THE MESSAGES OUT WITHOUT WAITING FOR THE PRINT BUFFER
   sendmessages()
+  sendchatbox()
   #PRINTING IS A GOD AWFUL MESS, VALUES CHANGE PLACES THROUGHOUT TESTING AND I NEED A BETTER SYSTEM FOR THIS
   if "Alpha" in wave:
     if not "A" in globals()["printrelay"]:
@@ -96,7 +102,7 @@ def printvalues(wave):
         globals()["RELAX"] = calculate_ratio(globals()["ALPHA"], globals()["THETA"])
         print(str(globals()["RELAX"]) + " Relax")
   
-  
+  currenttime = round(time.time(), 1)
   if "A" in globals()["printrelay"]:
     if "B" in globals()["printrelay"]:
       if "D" in globals()["printrelay"]:
@@ -107,10 +113,13 @@ def printvalues(wave):
                 if "R" in globals()["printrelay"]:
                   if "X" in globals()["printrelay"]:
                     
-                    globals()["printrelay"] = ""
-                    time.sleep(.03) #SOME DELAY OR ELSE THE ENTIRE THING CLEARS BEFORE ITS EVEN READABLE
                     
-                    os.system("cls")
+                    
+                    if currenttime > globals()["timesent2"]:
+
+                      os.system("cls")  
+                      globals()["printrelay"] = ""
+                      globals()["timesent2"] = currenttime
                   
             
   
@@ -184,15 +193,19 @@ def sendmessages():
   client.send_message("/avatar/parameters/FocusRight", globals()["FOCUSRIGHT"])
   client.send_message("/avatar/parameters/FocusLeft", globals()["FOCUSLEFT"])
   client.send_message("/avatar/parameters/Focus", globals()["FOCUS"])
-  sendchatbox()
+  
   
 def sendchatbox():
-  focusr = str(round(globals()["FOCUSRIGHT"], 4))
-  focusl = str(round(globals()["FOCUSLEFT"], 4))
-  focusavg = str(round(globals()["FOCUS"], 4))
-  messagestring = "←OSC Brain Control→\v╔═════════════╗\vRightFocus: {focusr}\vLeftFocus: {focusl}\v╚═════════════╝"
+  focusr = str(round(globals()["FOCUSRIGHT"], 6))
+  focusl = str(round(globals()["FOCUSLEFT"], 6))
+  focusavg = str(round(globals()["FOCUS"], 6))
+  messagestring = "←OSC Brain Control→\v╔══════════╗\vRightFocus: %s \vLeftFocus: %s \v╚══════════╝" % (focusr, focusl)
   client = udp_client.SimpleUDPClient("127.0.0.1", 9000) # SENDS DATA TO VRCHAT OVER PARAMS FOCUS, FOCUSLEFT AND FOCUSRIGHT
-  client.send_message("/chatbox/input", [messagestring , True, False])
+  currenttime = round(time.time(), 1)
+  
+  if currenttime > globals()["timesent"] + 1.7:
+    client.send_message("/chatbox/input", [messagestring , True, False])
+    globals()["timesent"] = currenttime
   
 
 def sendblink():
