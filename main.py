@@ -190,7 +190,7 @@ def sendchatbox():
   focusr = str(round(globals()["FOCUSRIGHT"], 4))
   focusl = str(round(globals()["FOCUSLEFT"], 4))
   focusavg = str(round(globals()["FOCUS"], 4))
-  messagestring = "╔═════════════╗\vRightFocus: {focusr}\vLeftFocus: {focusl}\vAvgFocus: {focus}\v╚═════════════╝"
+  messagestring = "←OSC Brain Control→\v╔═════════════╗\vRightFocus: {focusr}\vLeftFocus: {focusl}\v╚═════════════╝"
   client = udp_client.SimpleUDPClient("127.0.0.1", 9000) # SENDS DATA TO VRCHAT OVER PARAMS FOCUS, FOCUSLEFT AND FOCUSRIGHT
   client.send_message("/chatbox/input", [messagestring , True, False])
   
