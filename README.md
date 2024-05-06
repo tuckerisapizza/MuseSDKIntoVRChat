@@ -1,6 +1,6 @@
 <img align="left" width="88" height="88" src="https://cdn.discordapp.com/attachments/772832118161932308/1232030038841622579/Square44x44Logo.scale-200.png?ex=66391c63&is=6626a763&hm=43f3e0d0c2ef2103199be31f8e64eb2b13e990d6bf9bc4753a48e47bac604aa2&">
 
-# Muse2014IntoVRChat
+# MuseSDKIntoVRChat
 
 This project is based off BrainFlowsIntoVRChat, using some of the same math from it, with my own code alongside it. THANK YOU SO MUCH TO CHARLES (Creator of BrainFlowsIntoVRChat) for help with the math!
 
@@ -10,12 +10,15 @@ Most of the software used alongside this project is abandonware, and it isn't gu
 
 # What you'll need:
 
-Muse MU-01 (2 charging ports)
+ANY MUSE BEFORE 2018
 
 MuseIO 3.4.1 (can be found at https://github.com/DrBrainlove/muse_tools)
+OR
+Muse Direct 2018
 
 Bluetooth Adapter
 
+# METHOD 1 (MUSE 2014 MU-01 ONLY)
 1. Install the Windows Muse SDK
 2. Open CMD and navigate to C:/Program Files (x86)/Muse/
 4. Put your muse in Pairing Mode (flashing light, hold down for 5 secs)
@@ -29,6 +32,25 @@ And it should re-connect.
 7. ```pip install -r requirements.txt```
 8. Open main.py
 9. Set VRChat avatar params properly (or use TouchOSC to map them)
+
+# METHOD 2 (ANY MUSE BEFORE 2018)
+We will need to get the unlisted Muse Direct SDK from the Microsoft Store.
+
+1. Download and install Alt App Installer (https://github.com/mjishnu/alt-app-installer/releases/latest)
+2. Paste this link in to install Muse Direct (https://apps.microsoft.com/detail/9p0mbp6nv07x)
+3. Open Muse Direct
+4. Connect your Muse through Windows bluetooth
+5. Add a new OSC output
+<img align="left" width="500" height="329" src="https://cdn.discordapp.com/attachments/772832118161932308/1237184511964479648/Screenshot_2024-05-06_192859.png?ex=663ab95d&is=663967dd&hm=b2dd1a9d0ab36356cae0935fe63dd575c5f3a11225cb05cd3439ba6b7f3c8670&">
+6. Copy these settings (scroll down and check EVERYTHING)
+<img align="left" width="500" height="351" src="https://cdn.discordapp.com/attachments/772832118161932308/1237185415270633472/Screenshot_2024-05-06_193244.png?ex=663aba34&is=663968b4&hm=f317eb079fa76186e3c3228363224bd628d812bc60284b17fd5448789c3d6021&">
+7. Turn on the OSC output
+8. Verify your headband is connected with the "Info" tab
+9. Download the zip of this repo and navigate into its folder on CMD
+7. ```pip install -r requirements.txt```
+8. Open main.py
+9. Set VRChat avatar params properly (or use TouchOSC to map them)
+
  #   Params are:
    
        /Focus (0-1) (Float)
