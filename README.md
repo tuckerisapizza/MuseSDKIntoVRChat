@@ -41,9 +41,9 @@ We will need to get the unlisted Muse Direct SDK from the Microsoft Store.
 3. Open Muse Direct
 4. Connect your Muse through Windows bluetooth
 5. Add a new OSC output
-<img align="left" width="500" height="329" src="https://cdn.discordapp.com/attachments/772832118161932308/1237184511964479648/Screenshot_2024-05-06_192859.png?ex=663ab95d&is=663967dd&hm=b2dd1a9d0ab36356cae0935fe63dd575c5f3a11225cb05cd3439ba6b7f3c8670&">
+<img  width="500" height="329" src="https://cdn.discordapp.com/attachments/772832118161932308/1237184511964479648/Screenshot_2024-05-06_192859.png?ex=663ab95d&is=663967dd&hm=b2dd1a9d0ab36356cae0935fe63dd575c5f3a11225cb05cd3439ba6b7f3c8670&">
 6. Copy these settings (scroll down and check EVERYTHING)
-<img align="left" width="500" height="351" src="https://cdn.discordapp.com/attachments/772832118161932308/1237185415270633472/Screenshot_2024-05-06_193244.png?ex=663aba34&is=663968b4&hm=f317eb079fa76186e3c3228363224bd628d812bc60284b17fd5448789c3d6021&">
+<img  width="500" height="351" src="https://cdn.discordapp.com/attachments/772832118161932308/1237185415270633472/Screenshot_2024-05-06_193244.png?ex=663aba34&is=663968b4&hm=f317eb079fa76186e3c3228363224bd628d812bc60284b17fd5448789c3d6021&">
 7. Turn on the OSC output
 8. Verify your headband is connected with the "Info" tab
 9. Download the zip of this repo and navigate into its folder on CMD
