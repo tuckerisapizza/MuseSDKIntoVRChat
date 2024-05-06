@@ -13,7 +13,9 @@ Most of the software used alongside this project is abandonware, and it isn't gu
 ANY MUSE BEFORE 2018
 
 MuseIO 3.4.1 (can be found at https://github.com/DrBrainlove/muse_tools)
+
 OR
+
 Muse Direct 2018
 
 Bluetooth Adapter
