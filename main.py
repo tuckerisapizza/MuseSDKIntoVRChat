@@ -4,6 +4,10 @@ import math
 import time
 import numpy as np
 
+# VARIABLES
+ismuseio = False
+
+
 from pythonosc.dispatcher import Dispatcher
 from pythonosc import osc_server, udp_client
 # i <3 global variables
@@ -237,6 +241,3 @@ if __name__ == "__main__":
       (args.ip, args.port), dispatcher)
   print("Serving on {}".format(server.server_address))
   server.serve_forever(poll_interval=1)
-  
- 
-        
