@@ -45,7 +45,7 @@ We will need to get the unlisted Muse Direct SDK from the Microsoft Store.
 5. Add a new OSC output
 <img  width="500" height="329" src="https://cdn.discordapp.com/attachments/772832118161932308/1237184511964479648/Screenshot_2024-05-06_192859.png?ex=663ab95d&is=663967dd&hm=b2dd1a9d0ab36356cae0935fe63dd575c5f3a11225cb05cd3439ba6b7f3c8670&">
 6. Copy these settings (scroll down and check EVERYTHING)
-<img  width="500" height="351" src="https://cdn.discordapp.com/attachments/772832118161932308/1237185415270633472/Screenshot_2024-05-06_193244.png?ex=663aba34&is=663968b4&hm=f317eb079fa76186e3c3228363224bd628d812bc60284b17fd5448789c3d6021&">
+<img  width="500" height="351" src="https://cdn.discordapp.com/attachments/1208173006011105310/1237186679400562688/Screenshot_2024-05-06_193754.png?ex=663abb62&is=663969e2&hm=46ada8c8ec9cfb47ec1c893a9d465b5703ea55d520bf5e3be349af0adfe69ff6&">
 
 7. Turn on the OSC output
    
