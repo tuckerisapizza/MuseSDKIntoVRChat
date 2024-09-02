@@ -26,7 +26,7 @@ Bluetooth Adapter
 4. Put your muse in Pairing Mode (flashing light, hold down for 5 secs)
 5. Connect it using bluetooth. (It will disconnect, just keep it paired)
 6. Run this command:
-   ```muse-io --device-name <DEVICE NAME> --osc osc.udp://localhost:1647```
+   ```muse-io --osc osc.udp://localhost:1647```
 
 And it should re-connect.
 
